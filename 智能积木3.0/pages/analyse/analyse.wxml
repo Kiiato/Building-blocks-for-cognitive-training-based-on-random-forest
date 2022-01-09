@@ -1,0 +1,35 @@
+<cu-custom bgColor="bg-olive">
+	<view slot="content">智能积木</view>
+</cu-custom>
+<scroll-view scroll-y  class="scrollPage">
+	<view class="cu-form-group text-black ">
+		<view class="title">统计模式</view>
+		<picker value="{{index}}" range="{{pickerArray}}" bindchange="bindPickerChange">
+			<view class="picker">
+				{{index==-1?"请选择模式":pickerArray[index]}}
+			</view>
+		</picker>
+	</view>
+	<view>
+		<view id="chart"  class="margin-top shadow">
+			<ec-canvas id="mychart-dom" canvas-id="mychart" ec="{{ec}}" force-use-old-canvas="true"></ec-canvas>
+		</view>
+	</view>
+	<view class="bg-green light" id="hint">
+		<rich-text nodes="{{text}}"></rich-text>
+	</view>
+</scroll-view>
+<!-- 违约弹窗
+<view class="cu-modal {{showmodal?'show':''}}">
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white justify-end">
+			<view class="content">违约次数</view>
+			<view class="action" bindtap="closeModal">
+				<text class="cuIcon-close text-red"></text>
+			</view> 
+		</view>
+		<view class="padding-xl">
+			1次（记录良好，请继续保持）
+		</view>
+	</view>
+</view> -->

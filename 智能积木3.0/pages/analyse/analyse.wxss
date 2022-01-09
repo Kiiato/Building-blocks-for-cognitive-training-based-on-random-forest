@@ -1,0 +1,11 @@
+#chart {
+	width: 100vw;
+	height: 60vh;
+	background-color: #fff;
+}
+
+#hint {
+	width: 100vw;
+	height: 20vh;
+}
+

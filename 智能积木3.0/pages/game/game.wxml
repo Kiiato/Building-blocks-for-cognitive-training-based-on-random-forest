@@ -1,0 +1,56 @@
+<scroll-view  scroll-y class="bg-olive light scrollPage" id="main-page">
+    <cu-custom bgColor="bg-olive">
+		<view slot="content">智能积木</view>
+	</cu-custom>
+    <!-- 搜索选择蓝牙 -->
+    <view class="text-black cu-form-group margin-top-sm margin-lr-sm radius shadow">
+        <view class="title" checked="{{BLswitch}}">蓝牙</view>
+        <switch bindchange="changeBLStatus"/>
+    </view>
+    <view class="cu-form-group margin-lr-sm text-black radius shadow">
+        <view class="title">蓝牙选择</view>
+        <picker id="bl-picker" disabled="{{!BLswitch}}" bindchange="bindPickerChange" range="{{BLdevices}}" value="{{index}}">
+            <view class="picker">
+                {{BLswitch?index>-1?BLdevices[index]:'点击选择蓝牙':""}}
+			</view>
+        </picker>
+    </view>
+    <!-- 游戏区 -->
+    <view id="game-area" class="margin-top-lg margin-lr-sm radius shadow bg-white">
+        <image src="{{bggame}}" bindtap="handleTapPlay"></image>      
+    </view>
+    <!-- 按钮功能区-->
+    <view id="acess" class="grid col-2 margin-tb-lg margin-lr-sm radius shadow bg-white text-xxl">
+	    <view class="flex align-center justify-center bg-gradual-green" bindtap="handleTapSubmit">
+		    提交<text class="cuIcon-check"></text>
+        </view>
+	    <view class="flex align-center justify-center bg-gradual-red" bindtap="handleTapEnd">
+            结束<text class="cuIcon-close"></text>
+        </view>
+    </view>
+    <!-- 模式选择层 -->
+    <view wx:if="{{choosemode}}" id="mode-choose" class="flex align-center" catchtap="handleTapGray">
+        <scroll-view scroll-x enhanced="true"paging-enabled="true">
+            <view class="mode" wx:for="{{modebg}}">
+                <view class="text-white text-center">右滑动切换模式，点击图片选择模式</view>
+                <image id="{{index}}" src="{{item}}" catchtap="handleTapMode"></image>  
+            </view>
+        </scroll-view>
+    </view> 
+    <!-- 完成情况提示 -->
+    <view class="cu-modal {{showmodal?'show':''}}">
+        <view class="cu-dialog">
+            <view class="cu-bar bg-white justify-end">
+                <view class="content">完成情况</view>
+                <view class="action" bindtap="closeModal">
+                    <text class="cuIcon-close text-red"></text>
+                </view>
+            </view>
+            <view class="padding-xl">
+                <text class="content">{{finishState[finishLevel]}}</text>
+                <text>\n             </text>
+                <image src="{{finish_img[finishLevel]}}"></image>
+            </view>
+        </view>
+    </view>
+</scroll-view>

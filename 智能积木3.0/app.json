@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/game/game",
+    "pages/home/home",
+    "pages/analyse/analyse"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/game/game",
+        "text": "游戏",
+        "iconPath": "icon/游戏_灰.png",
+        "selectedIconPath": "icon/游戏.png"
+      },
+      {
+        "pagePath": "pages/analyse/analyse",
+        "text": "分析",
+        "iconPath": "icon/分析_灰.png",
+        "selectedIconPath": "icon/分析.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "用户",
+        "iconPath": "icon/用户_灰.png",
+        "selectedIconPath": "icon/用户.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "ec-canvas": "/ec-canvas/ec-canvas"
+  },
+  
+  "sitemapLocation": "sitemap.json"
+}
