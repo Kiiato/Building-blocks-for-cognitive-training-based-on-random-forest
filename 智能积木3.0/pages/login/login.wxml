@@ -1,0 +1,56 @@
+<view id="main-page" class="bg-white">
+	<cu-custom bgColor="bg-olive">
+		<view slot="content">登录</view>
+	</cu-custom>
+	<image src="" mode="heightFix"></image>
+	<form>
+		<view class="cu-form-group">
+			<view class="title text-black">用户名</view>
+			<input bindinput="getUserName" placeholder="请输入用户名"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title text-black">密码</view>
+			<input bindinput="getPassword" placeholder="请输入密码" type="password"></input>
+			<view class="text-sm text-green">
+				忘记密码？
+			</view>
+		</view>
+	</form>
+	<view class="padding flex justify-around align-center bg-white">
+		<button bindtap="dologin" class="cu-btn round lg bg-green">登录</button>
+		<button bindtap="handleTapSignin"  class="cu-btn round lg lines-green">注册</button>
+	</view>
+	<view class="text-sm text-center margin-sm">
+		登录即代表你同意<text class="text-green">用户协议</text>和<text class="text-green">隐私政策</text>
+	</view>
+	<view class="text-sm text-center margin-sm">
+		遇到问题？<text class="text-green">查看帮助</text>
+	</view>
+	<view class="cu-modal {{signIn.isShow}}">
+		<view class="cu-dialog">
+			<view class="cu-bar bg-white justify-end">
+				<view class="content">注册</view>
+				<view class="action" bindtap="handleTapX">
+					<text class="cuIcon-close text-red"></text>
+				</view> 
+			</view>
+			<view class="padding-xl text-left">
+				<form>
+					<view class="cu-form-group">
+						<view class="title text-black">用户名</view>
+						<input bindinput="getUserName_signin" placeholder="请输入用户名" name="input"></input>
+					</view>
+					<view class="cu-form-group">
+						<view class="title text-black">密码</view>
+						<input bindinput="getPassword_signin" placeholder="请输入密码" name="input"></input>
+					</view>
+					<view class="cu-form-group text-black">
+						<view class="title">确认密码</view>
+						<input bindinput="getPassword_asure_signin" placeholder="请确认密码" name="input"></input>
+					</view>
+					<button class="margin-top bg-green"  bindtap="dosignin">确定注册</button>
+				</form>				
+			</view>
+		</view>
+	</view>
+</view>

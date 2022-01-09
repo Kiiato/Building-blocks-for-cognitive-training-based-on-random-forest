@@ -1,0 +1,42 @@
+<scroll-view scroll-y class="scrollPage">
+	<cu-custom bgColor="bg-olive">
+		<view slot="content">智能积木</view>
+	</cu-custom>
+    <view id="user-info" class="flex align-center bg-olive">
+        <view class="flex align-center margin-lr-lg">
+            <image class="cu-avatar xl round margin" src="https://s3.ax1x.com/2021/03/13/6aLGrQ.png"></image>
+        </view>
+        <view class="flex align-center">
+            <view class="text-xl">
+                你好，{{wxNickName}}！
+            </view>
+            <view class="cuIcon-post margin-left-xs"></view>
+        </view>
+	</view>
+    <view class="cu-list menu card-menu margin-top">
+		<view class="cu-item arrow" >
+    		<view class="content">
+    		    <text class="cuIcon-comment text-grey"></text>
+    		    <text class="text-grey">公告</text>
+    	    </view>
+    	</view>
+		<view class="cu-item arrow" >
+    		<view class="content">
+    		    <text class="cuIcon-questionfill text-grey"></text>
+    		    <text class="text-grey">帮助</text>
+    	    </view>
+    	</view>
+        <view class="cu-item arrow" >
+    		<view class="content">
+    		    <text class="cuIcon-infofill text-grey"></text>
+    		    <text class="text-grey">关于</text>
+    	    </view>
+    	</view>
+        <view class="cu-item arrow" >
+    		<view class="content">
+    		    <text class="cuIcon-close text-grey"></text>
+    		    <text class="text-grey" bindtap="handleTapPlay">退出</text>
+    	    </view>
+    	</view>
+    </view>
+</scroll-view>
